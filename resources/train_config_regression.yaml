@@ -73,7 +73,7 @@ loaders:
   # path to the raw data within the H5
   raw_internal_path: raw
   # path to the the label data within the H5
-  label_internal_path: random
+  label_internal_path: label
   # path to the pixel-wise weight map withing the H5 if present
   weight_internal_path: null
   # configuration of the train loader
