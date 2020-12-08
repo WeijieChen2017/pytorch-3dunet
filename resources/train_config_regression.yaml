@@ -19,7 +19,7 @@ model:
 # trainer configuration
 trainer:
   # path to the checkpoint directory
-  checkpoint_dir: "CHECKPOINT_DIR"
+  checkpoint_dir: "/checkpoint/"
   # path to latest checkpoint; if provided the training will be resumed from that checkpoint
   resume: null
   # how many iterations between validations
@@ -81,7 +81,7 @@ loaders:
     # absolute paths to the training datasets; if a given path is a directory all H5 files ('*.h5', '*.hdf', '*.hdf5', '*.hd5')
     # inside this this directory will be included as well (non-recursively)
     file_paths:
-        - "PATH_TO_TRAIN_SET"
+        - "/data/wolny_train/"
 
     # SliceBuilder configuration, i.e. how to iterate over the input volume patch-by-patch
     slice_builder:
@@ -90,7 +90,7 @@ loaders:
       # train patch size given to the network (adapt to fit in your GPU mem, generally the bigger patch the better)
       patch_shape: [32, 128, 128]
       # train stride between patches
-      stride_shape: [16, 100, 100]
+      stride_shape: [16, 64, 64]
 
     # data transformations/augmentations
     transformer:
@@ -124,7 +124,7 @@ loaders:
     # paths to the validation datasets; if a given path is a directory all H5 files ('*.h5', '*.hdf', '*.hdf5', '*.hd5')
     # inside this this directory will be included as well (non-recursively)
     file_paths:
-        - "PATH_TO_VAL_SET"
+        - "/data/wolny_val"
 
     # SliceBuilder configuration
     slice_builder:
